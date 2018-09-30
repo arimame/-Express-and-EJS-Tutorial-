@@ -3,7 +3,7 @@ const app = require('express') ();
 const posts = [
 {
   id: 1,
-  author: "John,",
+  author: "John",
   title: "Templating with EJS",
   body: "Blog post number 1"
 
@@ -30,10 +30,10 @@ const posts = [
 
 ]
 
-app.set("engine view", "ejs");
+app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  res.render('home', {posts: post})
+  res.render('home', {posts: posts})
 })
 
 app.get('/post/:id', (req, res) => {
@@ -52,5 +52,5 @@ app.get('/post/:id', (req, res) => {
 
 app.listen(8080)
 
-console.log("Listening on port 8080")
+console.log("listening on port 8080")
 
